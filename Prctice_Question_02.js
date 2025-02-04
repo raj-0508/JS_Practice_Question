@@ -90,7 +90,7 @@
 // Solution:
 
 // let code = 11
-// if (code === 5 || code === 7 || code === 11 || code === 24) {
+// if (code == 5 || code == 7 || code == 11 || code == 24) {
 //     console.log("Right code");
 // } else {
 //     console.log("Wrong code");
@@ -127,3 +127,37 @@
 
 
 
+// 11. Question - Write a MENU DRIVEN program, which calculate and print the area of squar or circle depending on the users coice from the menu.
+// step 1 -
+// 		  1. ...........Area of Square
+// 		  2. ...........Area of circle
+// 		       Enter your choice?
+					   
+// Step 2 - 
+// 		Depending on choice it should ask:
+// 		   Enter side of square?
+// 		   or
+// 		   Enter radius of circle?
+				   
+// Step 3 -
+// 		output As-
+// 		Area of Square whose side is ..... is .....
+// 		or
+// 		Area of circle whose Radius is ...... is ......
+
+
+
+// Solution:
+
+// let side = 95
+// let radius = 45
+        
+// let choice = 2
+        
+// if (choice == 1) {
+//     console.log(`Area of Square whose side is ${side} is ${side ** 2}`);
+// } else if (choice == 2) {
+//     console.log(`Area of Circle whose radius is ${radius} is ${(Math.PI * radius ** 2).toFixed(2)}`);
+// } else {
+//     console.log("Invalid choice! Please enter 1 or 2.");
+// }
