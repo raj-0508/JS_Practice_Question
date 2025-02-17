@@ -191,3 +191,10 @@
 
 
 // Q9. Write a program which forces the user, to enter any positive value and print it. the program should keep on asking the number again and again, till user do not enter any positive.
+while (true) {
+    num = 55;
+    if (num > 0) {
+        console.log("You entered:", num);
+        break;
+    }
+}
