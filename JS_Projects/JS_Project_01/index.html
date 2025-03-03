@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Enhanced Counter App</title>
+  <style>
+    body {
+      text-align: center;
+      background-color: #f8f9fa;
+    }
+
+    #app {
+      width: 300px;
+      margin: 50px auto;
+      padding: 20px;
+    }
+
+    #app h2 {
+      font-family: "Courier New", Courier, monospace;
+      font-size: 2.5rem;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 3rem;
+    }
+
+    button {
+      padding: 10px 20px;
+      color: rgb(22, 120, 177);
+      border: 2px solid rgb(33, 133, 119);
+      border-radius: 15px;
+      font-size: 1rem;
+      text-decoration: none;
+      margin-top: 2rem;
+    }
+
+    .red {
+      color: red;
+    }
+
+    .green {
+      color: green;
+    }
+
+    .blue {
+      color: blue;
+    }
+
+    #counter {
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 3rem;
+      transition: transform 0.2s ease-in-out, color 0.2s;
+    }
+
+    .bounce {
+      transform: scale(1.2);
+    }
+
+    input {
+      width: 50px;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="app">
+    <h2>Counter App</h2>
+    <h1 id="counter">0</h1>
+    <label>Increment/Decrement Value:</label>
+    <input type="number" id="stepValue" value="1" min="1" />
+    <div class="buttons">
+      <button onclick="increase()">Increase</button>
+      <button onclick="decrease()">Decrease</button>
+    </div>
+    <div class="buttons">
+      <button onclick="startAutoIncrement()">Start Auto</button>
+      <button onclick="stopAutoIncrement()">Stop Auto</button>
+    </div>
+    <div class="buttons">
+      <button onclick="reset()">Reset</button>
+    </div>
+
+    <!-- Audio Element -->
+    <audio id="counterSound">
+      <source src="beep-08b.mp3" />
+      Your browser does not support the audio tag.
+    </audio>
+  </div>
+
+  <script>
+    let counterValue = 0;
+    let counterElement = document.getElementById("counter");
+    let stepInput = document.getElementById("stepValue");
+    let interval;
+
+    // Audio
+    let beepSound = document.getElementById("counterSound");
+
+    function playSound() {
+      beepSound.currentTime = 0;
+      beepSound.play();
+    }
+
+    function increase() {
+      let step = parseInt(stepInput.value) || 1;
+      counterValue += step;
+      updateCounter();
+    }
+
+    function decrease() {
+      let step = parseInt(stepInput.value) || 1;
+      if (counterValue - step >= 0) {
+        counterValue -= step;
+        updateCounter();
+      }
+    }
+
+    function reset() {
+      counterValue = 0;
+      updateCounter();
+    }
+
+    function startAutoIncrement() {
+      let step = parseInt(stepInput.value) || 1;
+      if (!interval) {
+        interval = setInterval(() => {
+          counterValue += step;
+          updateCounter();
+        }, 1000);
+      }
+    }
+
+    function stopAutoIncrement() {
+      clearInterval(interval);
+      interval = null;
+    }
+
+    function updateCounter() {
+      counterElement.innerText = counterValue;
+      playSound();
+
+      counterElement.classList.add("bounce");
+      setTimeout(() => counterElement.classList.remove("bounce"), 200);
+
+      if (counterValue > 0) {
+        counterElement.className = "green";
+      } else if (counterValue === 0) {
+        counterElement.className = "blue";
+      }
+    }
+  </script>
+</body>
+
+</html>
