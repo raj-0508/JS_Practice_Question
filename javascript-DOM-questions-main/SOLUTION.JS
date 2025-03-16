@@ -23,6 +23,9 @@ Output: Array(7)[("iPhone", "Mac", "iPad", "Watch", "AirPods", "Music", "TV")];
 
 // Question 4
 
+contactNumber = document.querySelector('.contact-number-class');
+contactNumber.innerText = 'New Contact Number';
+
 // Question 5
 
 button = document.querySelector(".floating-navigation__button span");
@@ -65,11 +68,71 @@ button.addEventListener(
   () => (button.style.backgroundColor = "blue")
 );
 
-button.addEventListener(
-  "mouseout",
-  () => (button.style.backgroundColor = "")
-);
+button.addEventListener("mouseout", () => (button.style.backgroundColor = ""));
 
 // Question 11
 
+logo = document.querySelector(".wrapper a");
 
+if (logo) {
+  newLogo = document.createElement("img");
+  newLogo.src = "https://ineuron.ai/images/ineuron-logo.png";
+  newLogo.style.width = "100px";
+
+  logo.replaceWith(newLogo);
+}
+
+// Question 12
+
+githubButton = document.querySelector(
+  ".FormField-input.Button--primary.Button--medium.Button"
+);
+githubButton.style.backgroundColor = "blue";
+
+// Question 13
+
+hackerrankDesc = document.querySelector(".pageheader_title.w-richtext");
+hackerrankDesc.innerHTML = "JSBOOTCAMP";
+
+// Question 14
+
+hotDeals = document.querySelector(
+  ".PromotionBanner__text__1HGpW.swiper-slide-content"
+);
+hotDeals.style.fontSize = "80px";
+
+// Question 15
+
+gamingText = document.querySelector(".ps-title");
+gamingText.style.textAlign = "right";
+
+// Question 16
+
+vercelHeading = document.querySelector(
+  ".text_wrapper__i87JK.hero_heading__VOetF "
+);
+vercelHeading.innerHTML = "Start with Scratch";
+
+// Question 17
+
+sonyButton = document.querySelector(
+  ".CategoryNav__PdpNavBuyLink.js-datalayer-action-event.js-product-price.js-where-to-buy.js-datalayer-product-availability"
+);
+sonyButton.innerHTML = new Date().toLocaleDateString();
+
+// Question 18
+
+philipsBg = document.querySelector(".p-n02v3__shape-wrapper-desktop ");
+philipsBg.style.backgroundColor = "orange";
+
+// Question 19
+
+canonLogo = document.querySelector(".p-header__top--logo a img");
+console.log(canonLogo.src);
+
+// Question 20
+
+subtitle = document.querySelector(
+  ".subtitle.ft-subtitle-3-1.font-medium.stop-prop"
+);
+subtitle.style.color = "orange";
