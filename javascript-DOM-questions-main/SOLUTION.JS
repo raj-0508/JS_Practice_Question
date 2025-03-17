@@ -21,10 +21,20 @@ Output: Array(7)[("iPhone", "Mac", "iPad", "Watch", "AirPods", "Music", "TV")];
 
 // Question 3
 
+faqList = document.querySelector(".accordion-homepage");
+
+newFAQ = document.createElement("section");
+
+faqText = document.createTextNode("My New FAQ");
+
+newFAQ.appendChild(faqText);
+
+faqList.appendChild(newFAQ);
+
 // Question 4
 
-contactNumber = document.querySelector('.contact-number-class');
-contactNumber.innerText = 'New Contact Number';
+contactNumber = document.querySelector(".contact-number-class");
+contactNumber.innerText = "New Contact Number";
 
 // Question 5
 
